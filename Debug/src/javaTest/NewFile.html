@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ var num1=parseFloat(55);
+ if(!isNaN(num1)){
+ 	num1=Math.random(num1*100)/100;
+ 	var str=num1.toString();
+ 	var rs=str.indexOf('.');
+ 	if(rs<0){
+ 		rs=str.length;
+ 		str +='.';
+ 	}
+ }
+</script>
+</head>
+<body>
+ <div>js断点演示</div>
+</body>
+</html>
