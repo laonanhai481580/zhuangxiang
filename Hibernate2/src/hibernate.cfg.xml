@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd" >
+<hibernate-configuration>
+
+  <!--通常一个session-factory节点代表一个数据库-->
+  <session-factory>
+      <!--1.配置数据库的驱动-->
+    <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    
+    <!--2.配置数据库的url地址-->
+    <property name="connection.url">jdbc:oracle:thin:@127.0.0.1:1521:orcl</property>
+    
+    <!--3,配置数据库的username-->
+    <property name="connection.username">holly</property>
+   
+       <!--4.配置数据库的密码-->
+    <property name="connection.password">sys</property>
+    
+    <!--5.配置数据库的方言-->
+    <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    
+    <!--6.显示sql语句-->
+    <property name="show_sql">true</property>
+    
+    <!--7.sql语句格式化-->
+    <property name="format_sql">true</property>
+    
+    <!--8.加载映射文件-->
+    <mapping resource="com/entity/Student.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

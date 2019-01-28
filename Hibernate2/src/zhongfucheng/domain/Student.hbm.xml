@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <!--1.实体类的字段和数据库的字段一一映射
+        name:实体类的全名
+        table:对应的数据库表名,默认值为类名
+    -->
+   <class name="com.entity.Student" table="STUDENT">
+   
+   <!--1.1主键配置
+          id:对应表中的主键
+          name:实体类中的属性名
+       type:主键属性的数据类型
+       column:属性名对应表的字段名,默认值为属性名-->
+       <id name="sid" type="java.lang.Integer" column="SID">
+       
+             <!--generator:为持久化实例产生一个唯一标识-->
+          <generator class="sequence">
+          
+              <!--数据库的序列名-->
+            <param name="sequence">SEQ_STUDENT</param>
+          </generator>
+       </id>
+       
+       <!--1.2普通字段配置-->
+       <property name="sname" type="java.lang.String" column="SNAME"/>
+       <property name="password" type="java.lang.String" column="PASSWORD"/>
+       <property name="sex" type="java.lang.String" column="SEX"/>
+       <property name="cid" type="java.lang.Integer" column="CID"/>
+   </class>
+</hibernate-mapping>
